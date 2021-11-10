@@ -21,3 +21,11 @@ func _on_Fullscreen_pressed():
 
 func _on_Quit_pressed():
 	get_tree().quit()
+
+func _on_Retry_pressed():
+	get_tree().get_root().propagate_call("on_retry")
+	# warning-ignore:return_value_discarded
+	get_tree().reload_current_scene()
+	set_visible(false)
+	get_tree().paused = false
+

@@ -1,5 +1,6 @@
 extends Node
 
+export(int) var initial_max_health = 4
 export(int) var max_health = 1 setget set_max_health
 var health = max_health setget set_health
 
@@ -20,3 +21,7 @@ func set_health(value):
 
 func _ready():
 	self.health = max_health
+
+func on_retry():
+	self.max_health = initial_max_health
+	self.health = initial_max_health
